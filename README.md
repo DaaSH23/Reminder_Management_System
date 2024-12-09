@@ -4,7 +4,22 @@ This project is a **Node.js API** for managing user authentication, reminders, a
 
 ---
 
-## Features
+## Table of contents
+
+- [Project Features](#project-features)
+- [Technologies Used](#technologies-used)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [API Endpoints](#api-endpoints)
+- [Middlewares](#middlewares)
+- [How to Use](#how-to-use)
+- [Future Enhancements](#future-enhancements)
+- [Additional Features implementetion](#additional-features-implementetion)
+- [Contact](#contact)
+
+---
+
+## Project Features
 
 ### Authentication
 - **Login**: Authenticate users with email and password.
@@ -37,50 +52,9 @@ This project is a **Node.js API** for managing user authentication, reminders, a
 
 ---
 
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/DaaSH23/Reminder_Management_System.git
-   cd ReminderManagementSystem
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Setup the .env file:
-    ```bash
-    PORT=5000
-    MONGO_URI=<Your MongoDB Connection String>
-    JWT_SECRET_KEY=<Your JWT Secret Key>
-    NODE_ENV=development
-    ```
-4. Start the server:
-    ```bash
-    npm run dev
-    OR
-    npm start
-    ```
-
----
-
-## Middlewares
-
-1. Authorization Middleware:
-    Ensures routes are accessible only to authenticated users.
-    Verifies and decodes JWT tokens.
-2. Error Handling Middleware:
-    Captures and formats all errors.
-3. Blacklist Middleware:
-    Verifies if a token is blacklisted before granting access.
-
-
----
-
-
 ## Folder Structure
 
+```bash
 ├── controllers/
 │   ├── authCountroller.js      # Handles auth-related operations
 │   ├── userController.js       # Handles user-related operations
@@ -102,6 +76,75 @@ This project is a **Node.js API** for managing user authentication, reminders, a
 ├── .env                        # Environment variables
 ├── index.js                    # Entry point of the application
 └── package.json                # Dependencies and scripts
+```
+
+---
+
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/DaaSH23/Reminder_Management_System.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Setup the .env file:
+    ```bash
+    PORT=5000
+    DB_uri=<Your MongoDB Connection String>
+    JWT_SECRET_KEY=<Your JWT Secret Key>
+    NODE_ENV=development
+    ```
+4. Start the server:
+    ```bash
+    npm run dev
+    OR
+    npm start
+    ```
+
+---
+
+## API Endpoints
+
+### User Routes
+
+```
+| Method | Endpoint          | Description                  |
+|--------|-------------------|------------------------------|
+| POST   | `/createuser`     | Register a new user.         |
+| POST   | `/login`          | Log in an existing user.     |
+| POST   | `/logout`         | Log out the user.            |
+| POST   | `/userdata`       | Fetch users with pagination. |
+| PUT    | `/edituser`       | Edit user profile.           |
+```
+---
+
+### Reminder Routes
+```
+| Method | Endpoint          | Description                     |
+|--------|-------------------|---------------------------------|
+| POST   | `/createreminder` | Create a new reminder.          |
+| POST   | `/getreminder`    | Fetch reminders with filters.   |
+| POST   | `/editreminder`   | Edit an existing reminder.      |
+| POST   | `/deletereminder` | Delete a reminder.              |
+
+```
+
+---
+
+## Middlewares
+
+1. Authorization Middleware:
+    - Ensures routes are accessible only to authenticated users.
+    - Verifies and decodes JWT tokens.
+2. Error Handling Middleware:
+    - Captures and formats all errors.
+3. Blacklist Middleware:
+    - Verifies if a token is blacklisted before granting access.
 
 
 ---
@@ -146,5 +189,9 @@ This project is a **Node.js API** for managing user authentication, reminders, a
 
 
 
+## Contact
+  email - reachtoabhisheko@gmail.com
+  linkedIn - https://www.linkedin.com/in/abhishek-oraon-developer/
+
+
 Thank you ! 
-- developed by Abhishek Oraon.
